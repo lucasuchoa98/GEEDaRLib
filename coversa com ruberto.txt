@@ -1,0 +1,21 @@
+Não é uma biblioteca
+
+Passo a passo de utilização dos algoritmos
+
+seria legal deixa em pacote - Christopher sabe fazer isso, falar com ele
+Geedar
+
+para rodar o script precisa do google cloud
+
+limpar as libs utilizadas pelo script
+
+paper
+
+elsevier - 
+
+podemos trabalhar com chuva, altimetria, nivel de reservatório
+
+Fazer inicialmente, usar dados de altimetria, pegar a lagoa mundau e ter dados de nível automático
+
+agora é o momento de descobrir como o produto funciona
+
