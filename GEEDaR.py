@@ -35,15 +35,22 @@ running_modes = [
     "5 (estimation overwrite)"
     ]
 
-# pq ele faz isso?
 running_mode = ""
 
+"""
 processing_codes, product_ids, img_proc_algos, estimation_algos, reducers = (
     [10110001,10210001,30109001,30209001,30309001,20109001], 
     [101,102,301,302,303,201], 
     [10,10,9,9,9,9], 
     [0]*6, [1]*6
     )
+"""
+
+processing_codes = [10110001,10210001,30109001,30209001,30309001,20109001]
+product_ids = [101,102,301,302,303,201]
+img_proc_algos = [10,10,9,9,9,9]
+estimation_algos = [0]*6
+reducers = [1]*6
 
 nProcCodes = len(processing_codes)
 aoi_modes = ["radius", "kml"]
@@ -1481,6 +1488,7 @@ def loadInputDF():
             # Read the CSV file.
             try:
                 user_df = pd.read_csv(input_path)
+                print(user_df)
             except Exception as e:
                 print("(!) Could not read the input file.")
                 raise Exception(e)
@@ -2850,7 +2858,9 @@ output_path = input_dir + "result_" + input_file
 aoi_mode = "kml"
 aoi_radius = 1000
 running_mode = 0
-processing_codes, product_ids, img_proc_algos, estimation_algos, reducers = unfoldProcessingCode("[30109001,30209001,30309001,30112001,30212001,30312001]")
+processing_codes, product_ids, img_proc_algos, estimation_algos, reducers = unfoldProcessingCode(
+    "[30109001,30209001,30309001,30112001,30212001,30312001]"
+    )
 nProcCodes = len(processing_codes)
 time_window = 2
 append_mode = True
@@ -2882,5 +2892,3 @@ if running_mode < 3:
             print("Results saved to file '" + output_path + "'.")
 elif running_mode in [3,4,5]:
     databaseUpdate()
-
-
